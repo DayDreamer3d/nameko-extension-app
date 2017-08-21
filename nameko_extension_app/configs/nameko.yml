@@ -1,0 +1,12 @@
+DB_URIS:
+    'people:Base': 'sqlite:///_persistent/people_age.db'
+
+AMQP_URI: 'amqp://localhost'
+
+LOGSTASH:
+    HOST: localhost
+    PORT: 5959
+    LOG_LEVEL: INFO
+
+REDIS_URIS:
+    development: 'redis://127.0.0.1:6379'  # redis doesn't like "localhost"

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Person's age</title>
+</head>
+
+<body>
+    <h1>Listed People</h1>
+    <ul>
+        {% for name, age in people.items() %}
+            <li>{{name}}: {{age}}</li>
+        {% endfor %}
+    </ul>
+    <hr>
+    <h1>Add/Edit Person</h1>
+    <form action="/" method="POST">
+        <input type="text" name="name" placeholder="Name">
+        <input type="text" name="age" placeholder="Age">
+        <input type="submit" name="submit" value="Add">
+    </form>
+</body>
+
+</html>

@@ -25,6 +25,10 @@ class PeopleService(object):
     log = nameko_logstash.LogstashDependency(local_file='./_persistent/logs/people_service.log')
 
     @rpc.rpc
+    def ping(self):
+        return 'pong!'
+
+    @rpc.rpc
     def get_people(self):
         """ get the listed people from system
         """
@@ -96,3 +100,8 @@ class PeopleService(object):
             _log.log(self.log, 'warn', str(e).encode())
 
         return True
+    
+    @rpc.rpc
+    def clear_cache(self):
+        _log.log(self.log, 'info', 'Clear cache.')
+        return _cache.clear(self.redis)

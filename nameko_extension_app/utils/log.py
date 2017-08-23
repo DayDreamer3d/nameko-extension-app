@@ -5,8 +5,6 @@
 def log(log_inst, level, message, *args):
     """ Log the message.
     """
-    message = message.encode()
-
     if level == 'info':
         log_inst.info(message, *args)
     elif level == 'warn':
